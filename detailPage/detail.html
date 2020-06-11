@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/title/taobao_detail.svg" sizes="32x32">
+    <title>商品详情</title>
+    <script src="./detail.js"></script>
+    <script src="../libs/comment.js"></script>
+    <link rel="stylesheet" href="./detail.css">
+    <script src="../libs/Storage.js"></script>
+
+    <link rel="stylesheet" href="../libs/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="../libs/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    
+</head>
+
+<body>
+
+    <!--part1 导航条  navbar-fixed-top固定顶部 -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- 导航条头部 -->
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <span>我的淘宝</span>
+            </a>
+          </div>
+          
+          <div class="navbar-collapse collapse">
+            <!-- 导航条左部 淘宝首页 用户名 消息 -->
+            <ul class="nav navbar-nav">
+                <li><a href="../index.html">淘宝首页</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Ooooh&nbsp;
+                        <span class="glyphicon glyphicon-grain" style="color: olive;"></span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu user">
+                        <div class="userinfo">
+                            <div class="userinfo-action">
+                                <a href="#" class="userinfo-action-manage">账号管理&nbsp;&nbsp;</a>
+                                <a href="../login/index.html" class="userinfo-action-exit">&nbsp;退出</a>
+                            </div>
+                            <img class="img-circle userinfo-img" src="../img/user/touxiang.jpg">
+                            <div class="userinfo-info">
+                                <span>淘气值：754</span></br>
+                                <span>普通会员</span>
+                            </div>
+                            <button class="userinfo-btn">查看你的专属权益</button>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-envelope" style="color: cornflowerblue; font-size: 12px;"></span>
+                         消息
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu news">
+                        <li>
+                            <a href="#" style="color: red;">
+                                新消息 
+                                <span class="badge" style="font-size: 10px; background-color: #999;">99+</span>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#">查看全部 <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span></a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">手机逛淘宝</a>
+                </li>
+
+            </ul>
+            <!-- 导航条右部 购物车 收藏夹 退出-->
+            <ul class="nav navbar-nav navbar-right"> 
+                <li><a href="../cart/index.html">
+                        <span class="glyphicon glyphicon-shopping-cart" style="color: red; font-size: 12px;"></span> 
+                        我的购物车
+                        <span class="cartItem-num">0</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-star-empty" style="color: orange; font-size: 12px;"></span>
+                         收藏夹
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu collect">
+                        <li><a href="#">收藏的宝贝</a></li>
+                        <li><a href="#">收藏的店铺</a></li>
+                    </ul>
+                </li>
+                <li><a href="../login/index.html"><span class="glyphicon glyphicon-log-in"></span> 退出登录</a></li> 
+            </ul> 
+          </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    
+    <!-- part2 详情 -->
+    <div class="container detail-box">
+        <div class="row">
+            <!-- 商品图片 -->
+            <div class="detail-box-left" id="box">
+                <div class="detail-imgbox" id="samll-imgbox">
+                    <img id="detail-img">
+                    <div id="mask" class="mask"></div>
+                </div>
+                <div class="detail-goods-collect">
+                    <span class="glyphicon glyphicon-star star-goods"> </span>
+                    <span>收藏宝贝（7985人气）</span>
+                </div>
+            </div>
+
+            <!-- 图片放大 -->
+            <div class="img-amplifier" id="bigimg-box">
+                <img id="detail-bigimg">
+            </div>
+
+            <!-- 商品详情 -->
+            <div class="detail-box-center">
+                <div class="detail-textbox">
+                    <h4 id = "detail-text"></h4>
+                </div>
+                <!-- 价格 -->
+                <div class="detail-price">
+                    <div class="detail-small-text">
+                        <span class="detail-box-center-text">价格</span>
+                    </div>
+                    <h2 class="price">￥<span id="price">45.00</span></h2>
+                </div>
+                <!-- 优惠 -->
+                <div class="detail-sale">
+                    <div class="detail-small-text">
+                        <span class="detail-box-center-text">优惠</span>
+                    </div>
+                    <span><span class="glyphicon glyphicon-certificate taoking"> </span> 淘金币可抵0.90元</span>
+                </div>
+                <!-- 配送 -->
+                <div class="detail-delivery">
+                    <div class="detail-small-text">
+                        <span class="detail-box-center-text">配送</span>
+                    </div>
+                    <li class="detail-delivery-li">江苏盐城 至 </li>
+                    <li class="detail-delivery-li"> 
+                        <form role="form" id="delivery-form" class="detail-delivery-form">
+                            <select id="province" class="form-control">
+                                <option value="-1">请选择</option>
+                            </select>
+                            <select id="city" class="form-control "></select>
+                            <select id="country" class="form-control"></select>
+                        </form>
+                    </li>
+                    <li class="detail-delivery-li"> &nbsp;&nbsp;&nbsp;&nbsp;快递 免运费</li>
+                </div>
+                <!-- 颜色分类 -->
+                <div class="detail-colorsort">
+                    <div class="detail-small-text">
+                        <span class="detail-box-center-text">颜色分类</span>
+                    </div>
+                    <div class="detail-colorsort-option">
+                        <img id="detail-mini-img">
+                    </div>
+                </div>
+                <!-- 数量 -->
+                <div class="detail-amount">
+                    <div class="detail-small-text">
+                        <span class="detail-box-center-text">数量</span>
+                    </div>
+                    <div class="detail-amount-number">
+                        <button class="number-left-btn">-</button>
+                        <input class="number-text" type="text" value="1"/>
+                        <button class="number-right-btn">+</button>
+                    </div>
+                    <div class="detail-amount-footer">
+                        <span>件（库存1693件）</span>
+                    </div>
+                    <!-- 数量不可再减少！ -->
+                    <div class="alert alert-warning number-warning nominus">
+                        <a href="#" class="close warning-close" data-dismiss="alert">
+                            &times;
+                        </a>
+                        <span><strong>警告！</strong>数量不可再减少！</span>
+                    </div>
+                    <!-- 请输入有效的数值！ -->
+                    <div class="alert alert-warning number-warning numerror">
+                        <a href="#" class="close warning-close" data-dismiss="alert">
+                            &times;
+                        </a>
+                        <strong>警告！</strong>输入数值无效！
+                    </div>
+                </div>
+                <!-- button -->
+                <div class="detail-btn">
+                    <button class="buy-btn">立即购买</button>
+                    <button class="tocart-btn"><span class="glyphicon glyphicon-shopping-cart"></span> 加入购物车</button>
+                </div>
+                <!-- 承诺 -->
+                <div class="detail-promise">
+                    <div class="detail-small-text">
+                        <span class="detail-box-center-text">承诺</span>
+                    </div>
+                    <div class="detail-promise-all">
+                        <span class="detail-box-center-text"> <img src="https://img.alicdn.com/tps/i2/TB1XY_zGpXXXXbeXXXXAz6UFXXX-16-16.png"> 15天退货&nbsp;&nbsp;</span>
+                        <span class="detail-box-center-text"> <img src="https://img.alicdn.com/tps/i1/TB1skruGpXXXXagXFXXAz6UFXXX-16-16.png"> 1次破损补寄&nbsp;&nbsp;</span>
+                        <span class="detail-box-center-text"> <img src="https://img.alicdn.com/tfs/TB1XMnjQFXXXXXYXFXXXXXXXXXX-16-16.png" srcset="https://img.alicdn.com/tfs/TB1oOuTQFXXXXazapXXXXXXXXXX-32-32.png 2x"> 运费险&nbsp;&nbsp;</span>
+                    </div>
+                </div>
+                <!-- 支付 -->
+                <div class="detail-pay">
+                    <div class="detail-small-text">
+                        <span class="detail-box-center-text">支付</span>
+                    </div>
+                    <span class="detail-box-center-text"><img src="https://img.alicdn.com/tfs/TB1KTHfQFXXXXbnXFXXXXXXXXXX-16-16.png" srcset="https://img.alicdn.com/tfs/TB1XeDvQFXXXXc5XXXXXXXXXXXX-32-32.png 2x"> 蚂蚁花呗&nbsp;&nbsp;</span>
+                    <span class="detail-box-center-text"><img src="https://img.alicdn.com/tfs/TB1w6O3QFXXXXX4aXXXXXXXXXXX-16-16.png" srcset="https://img.alicdn.com/tfs/TB1c7HAQFXXXXakXXXXXXXXXXXX-32-32.png 2x"> 信用卡支付&nbsp;&nbsp;</span>
+                    <span class="detail-box-center-text"><img src="https://img.alicdn.com/tfs/TB1dvGWQFXXXXcFaXXXXXXXXXXX-16-16.png" srcset="https://img.alicdn.com/tfs/TB1FdDlQFXXXXa5XpXXXXXXXXXX-32-32.png 2x"> 集分宝&nbsp;&nbsp;</span>
+                </div>
+            </div>
+
+            <!-- 店铺 -->
+            <div class="detail-box-right">
+                <div class="detail-box-right-gold">
+                    <!-- 金牌卖家 -->
+                    <div class="detail-box-right-title">
+                        <img class="detail-box-right-title-img" src="https://gtms01.alicdn.com/tps/i1/TB1zIlNFVXXXXXtXpXXxwHxIVXX-198-60.png">
+                        <span class="glyphicon glyphicon-magnet shop-logo-magnet">12年老店</span>
+                    </div>
+                    <!-- 店铺详情 -->
+                    <div class="detail-box-right-shop">
+                        <div class="shop-box-detail">
+                            <div class="shop-box-detail-name"><span>小托的宝藏小铺</span></div>
+                            <div class="shop-box-detail-col"><span class="detail-box-center-text">信誉：
+                                    <span class="glyphicon glyphicon-thumbs-up shop-logo-up"></span>
+                                    <span class="glyphicon glyphicon-thumbs-up shop-logo-up"></span>
+                                    <span class="glyphicon glyphicon-thumbs-up shop-logo-up"></span>
+                                </span>
+                            </div>
+                            <div class="shop-box-detail-col"><span class="detail-box-center-text">掌柜：小托</span></div>
+                            <div class="shop-box-detail-col"><span class="detail-box-center-text">联系：<span class="glyphicon glyphicon-send shop-logo-send"></span><span class="shop-box-detail-contact"> 和我联系&nbsp;</span></span></div>
+                            <div class="shop-box-detail-col"><span class="detail-box-center-text">资历：<span class="glyphicon glyphicon-user shop-logo-user"></span></span></div>
+                        </div>
+                        <div class="shop-box-score">
+                            <li class="shop-box-score-detail">
+                                <span class="detail-box-center-text">描述</span>
+                                <span class="shop-box-score-red">4.9 <span class="glyphicon glyphicon-arrow-up score-logo-red"></span></span>
+                            </li>
+                            <li class="shop-box-score-detail">
+                                <span class="detail-box-center-text">服务</span>
+                                <span class="shop-box-score-red">4.9 <span class="glyphicon glyphicon-arrow-up score-logo-red"></span></span>
+                            </li>
+                            <li class="shop-box-score-detail last">
+                                <span class="detail-box-center-text">物流</span>
+                                <span class="shop-box-score-red">4.9 <span class="glyphicon glyphicon-arrow-up score-logo-red"></span></span>
+                            </li>
+                        </div>
+                        <div class="shop-box-btn">
+                            <button class="shop-box-button toshop">进入店铺</button>
+                            <button class="shop-box-button collectshop">收藏店铺</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 看了又看 -->
+                <div class="detail-box-right-look">
+                    <div class="look-title"><span>看了又看</span></div>
+                    <li class="look-imgs">
+                        <img class="look-img-size" src="../img/pros/pros1-7.jpg">
+                        <span class="look-text">￥18.50</span>
+                    </li>
+                    <li class="look-imgs">
+                        <img class="look-img-size" src="../img/pros/pros1-8.jpg">
+                        <span class="look-text">￥22.50</span>
+                    </li>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+</body>
+</html>

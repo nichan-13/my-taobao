@@ -1,0 +1,475 @@
+
+button {
+    outline: none;
+}
+li {
+    list-style: none;
+}
+
+.navbar {
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+.cartItem-num {
+    color: red;
+    font-size: 16px;
+    font-weight: 600;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: rgb(255, 81, 0);
+}
+.dropdown-menu.user {
+    min-width: 270px;
+}
+.userinfo {
+    width: 100%;
+    height: 110px;
+}
+.userinfo-action {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 100px;
+    height: 14px;
+    font-size: 12px;
+}
+.userinfo-action-manage, .userinfo-action-exit {
+    text-decoration: none;
+    color: black;
+}
+.userinfo-action-manage:hover, .userinfo-action-exit:hover {
+    text-decoration: none;
+    color: rgb(255, 81, 28);
+}
+.userinfo-action-manage {
+    border-right: 2px solid #999;
+}
+.userinfo-img {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 55px;
+    height: 55px;
+}
+.userinfo-info {
+    position: relative;
+    width: 100px;
+    top: -23px;
+    left: 95px;
+}
+.userinfo-btn {
+    font-size: 13px;
+    width: 260px;
+    position: absolute;
+    height: 24px;
+    line-height: 24px;
+    bottom: 5px;
+    left: 4px;
+    border-radius: 0;
+    border: 1px solid #ffe4e9;
+    background-color: rgb(255,239,232);
+}
+.userinfo-btn:hover {
+    color: rgb(255, 81, 28);
+}
+.dropdown-menu.news {
+    min-width: 110px;
+}
+.dropdown-menu.collect {
+    min-width: auto;
+}
+
+
+.detail-box {
+    width: auto;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-right: none;
+}
+
+.detail-box-left {
+    position: absolute;
+    margin: 20px 15px 20px 20px;
+}
+.detail-goods-collect {
+    margin-left: 2px;
+    cursor: pointer;
+}
+.detail-imgbox {
+    margin-bottom: 20px;
+}
+#detail-img {
+    width: 400px;
+    height: 400px;
+}
+.star-goods {
+    color: orange;
+}
+.detail-box-center {
+    position: absolute;
+    margin-left: 435px;
+    margin-top: 20px;
+    width: 520px;
+}
+
+.detail-box-center-text {
+    color: rgb(80, 79, 79);
+}
+.detail-small-text {
+    float: left;
+    margin-left: 10px;
+    margin-right: 40px;  
+}
+.detail-textbox {
+    height: 40px;
+}
+#detail-text {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.detail-price {
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(255,241,232);
+    vertical-align: middle;
+}
+.price {
+    color: red;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 40px;
+}
+.detail-sale {
+    height: 30px;
+    line-height: 30px;
+    background-color: rgb(255,249,245);
+}
+.taoking {
+    color: orange;
+}
+.detail-delivery {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px dotted #ccc;
+}
+.detail-colorsort {
+    height: 50px;
+    position: relative;
+    margin-top: 10px;
+}
+#detail-mini-img {
+    width: 29px;
+    height: 29px;
+}
+.detail-colorsort-option {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    margin-left: 80px;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+.detail-colorsort-option:hover {
+    cursor: pointer;
+    border: 2px solid red;
+    padding: 1px;
+}
+.detail-amount {
+    height: 50px;
+    line-height: 50px;
+}
+.detail-amount-number {
+    position: absolute;
+    height: 25px;
+    width: 80px;
+    margin-left: 80px;
+}
+.number-left-btn{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid silver;
+    background: #f0f0f0;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+}
+.number-text{
+    position: absolute;
+    width: 39px;
+    height: 25px;
+    padding: 4px 0;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 12px;
+    outline: none;
+}
+.number-right-btn{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid silver;
+    background: #f0f0f0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 12px;
+    margin-left: 39px;
+    text-align: center;
+    padding: 0;
+}
+
+.number-left-btn:hover{
+    border: 1px solid #aaa;
+    outline: none;
+    cursor: pointer;
+    background: rgb(255, 203, 107);
+    color: white;
+}
+
+.number-right-btn:hover{
+    border: 1px solid #aaa;
+    outline: none;
+    cursor: pointer;
+    background: rgb(255, 203, 107);
+    color: white;
+}
+.detail-amount-footer {
+    position: absolute;
+    margin-left: 175px;
+}
+.detail-btn {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.buy-btn {
+    width: 136px;
+    height: 40px;
+    color: #E5511D;
+    border: 1px solid #F0CAB6;
+    background: #FFE4D0;
+    margin-right: 5px;
+}
+.buy-btn:hover {
+    background-color: #F0CAB6;
+}
+.tocart-btn {
+    width: 180px;
+    height: 40px;
+    color: #FFF;
+    border: 1px solid #F40;
+    background: rgb(255, 81, 0);
+}
+.tocart-btn:hover {
+    background-color: rgb(255, 30, 0);
+}
+.detail-promise {
+    height: 40px;
+    line-height: 40px;
+}
+
+.detail-pay {
+    height: 40px;
+    line-height: 40px;
+}
+
+.detail-box-right {
+    width: 200px;
+    height: 500px;
+    margin-left: 970px;
+}
+.detail-box-right-gold {
+    height: 300px;
+    border: 1px solid #ffe2a3;
+    margin: -1px 0 0 -1px;
+}
+.detail-box-right-title {
+    height: auto;
+    width: 200px;
+    border-bottom: 1px solid #ffe2a3;
+    text-align: center;
+    margin-left: -1px;
+}
+.detail-box-right-look {
+    height: 200px;
+    border: 1px solid #ccc;
+    border-top: none;
+    margin-left: -1px;
+}
+
+
+.detail-box-right-title-img {
+    height: 60px;
+    width: 200px;
+}
+.shop-logo-magnet {
+    color: orange;
+    font-size: 14px;
+}
+.detail-box-right-shop {
+    width: 100%;
+    padding: 10px 20px;
+    float: left;
+}
+.shop-box-detail {
+    border-bottom: 1px dotted #ccc;
+}
+.shop-box-detail-name {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+.shop-logo-up {
+    color: orangered;
+}
+.shop-box-detail-contact {
+    margin-left: -3px;
+    border: 1px solid orange;
+    padding: 1px;
+    font-size: 12px;
+    background-color: rgba(255, 166, 0, 0.445);
+    color: orangered;
+    cursor: pointer;
+}
+.shop-logo-send {
+    color: rgb(0, 135, 189);
+}
+.shop-logo-user {
+    color: rgb(255, 55, 55);
+}
+.shop-box-detail-col {
+    margin-bottom: 3px;
+}
+.shop-box-score {
+    margin-top: 3px;
+    height: 48px;
+    padding: 2px;
+    text-align: center;
+    vertical-align: middle;
+}
+.shop-box-score-detail {
+    display: inline-block;
+    height: 40px;
+    width: 48px;
+    padding: 3px;
+    border-right: 1px solid #ccc;
+}
+.shop-box-score-red {
+    color: red;
+    font-size: 10px;
+}
+.shop-box-score-detail.last{
+    border: none;
+}
+.shop-box-btn {
+    margin-top: 5px;
+}
+.shop-box-button {
+    width: 74px;
+    height: 28px;
+    line-height: 24px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #EDEDED;
+    border-radius: 2px;
+    background: #FAFAFA;
+}
+.shop-box-button.toshop {
+    margin-right: 5px;
+}
+.shop-box-button:hover {
+    background-color: rgb(236, 236, 236);
+}
+.detail-box-right-look {
+    padding: 10px 10px 0 10px;
+    text-align: center;
+}
+.look-title {
+    text-align: left;
+    margin: 0 0 5px 5px;
+}
+.look-imgs {
+    display: inline-block;
+    width: 82px;
+    height: 90px;
+    text-align: center;
+}
+.look-img-size {
+    width: 80px;
+    height: 80px;
+    padding: 1px;
+}
+.look-text {
+    color: red;
+    font-weight: 600;
+}
+.look-img-size:hover {
+    padding: 0;
+    border: 1px solid red;
+}
+
+
+.img-amplifier {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-left: 435px;
+    z-index: 99;
+    overflow: hidden;
+    display: none;
+}
+detail-imgbox {
+    position: relative;
+}
+#bigimg-box img {
+    position: absolute;
+}
+.mask {
+    width: 175px;
+    height: 175px;
+    background: rgba(186, 206, 209, 0.568);
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: move;
+    display: none;
+}
+.show {
+    display: block;
+}
+
+.detail-delivery-li {
+    display: inline-block;
+}
+.detail-delivery-form {
+    width: 190px;
+    display: flex;
+}
+#delivery-form select{
+    padding: 0;
+    height: 24px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+div.number-warning { 
+    display: none;
+    height: 30px;
+    line-height: 30px;
+    width: 200px;
+    position: absolute;
+    padding: 0 5px;
+    padding-left: 10px;
+    margin: 5px 300px;
+}
+.warning-close {
+    margin: 4px;
+}

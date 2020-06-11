@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  font-family: '微软雅黑', sans-serif;
+  background: rgb(174, 187, 207);
+}
+
+.game{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+.game_box{
+  position: relative;
+  width: 1240px;
+  height: 620px;
+  left: -620px;
+  top: -310px;
+  background: rgb(166, 140, 173);
+  border: rgb(230, 233, 243) solid 2px;
+  box-shadow: 5px 5px 5px rgb(148, 140, 150);
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: -1px;
+  position: absolute;
+  margin: 0;
+  top: -4px;
+  right: 5px;
+  color: transparent;
+  text-shadow: 0 0 4px white;
+}
+
+.canvas_box {
+  position: absolute;
+  padding: 20px;
+  width: 1200px;
+  height: 580px;
+}
+
+canvas {
+  position: relative;
+  width: 1200px;
+  height: 580px; 
+}
+
+.text_box {
+  position: absolute;
+  width: 150px;
+  height: 80px;
+  border: 1px solid rgb(174, 187, 207);
+  top: 20px;
+  right: 20px;
+  color: #aaa;
+  text-align: center;
+}
+
+p {
+  margin-top: 10px;
+}
+
+.game_begin{
+  position: relative;
+  margin: 20px;
+  width: 1120px;
+  height: 500px; 
+  /* background-color: rgb(253, 253, 253); */
+  background: url('http://img.zcool.cn/community/01cea95824234da84a0e282ba8b26c.gif');
+  background-size: 100% 125%; 
+  color: rgb(127, 112, 180);
+  text-align: center;
+  padding: 40px;
+  z-index: 999;
+}
+
+.begin_btn {
+  background: rgba(211, 217, 241, 0.63);
+  width: 200px;
+  height: 35px;
+  line-height: 35px;
+  border: 0;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(123, 110, 136);
+  margin-top: 150px;
+  outline: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+
+.game_over {
+  position: absolute;
+  margin: 20px;
+  width: 1120px;
+  height: 500px; 
+	background-color: rgba(150, 146, 146, 0.425);
+  text-align: center;
+  padding: 40px;
+  z-index: 1000;
+  display: none;
+}
+
+.game_over_alter {
+	margin: 160px auto;
+  width: 350px;
+  height: 120px;   
+  background-color: rgba(114, 112, 112, 0.692);
+  color: #fff;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.game_over_alter_text {
+	width: 100%;
+	font-size: 16px;
+	padding: 30px 0 20px 0;
+}
+
+.game_over_alter_btn {
+	width: 80px;
+	height: 24px;
+	line-height: 24px;
+	border-radius: 20px;
+	border: 0;
+	background-color: rgba(247, 37, 37, 0.596);
+	color: #fff;
+	outline: none;
+	cursor: pointer;
+}
+
+.game_over_alter_btn:hover {
+  background-color: rgb(255, 38, 0);
+}
+
+.show {
+  display: none;
+}
+.over {
+  display: block;
+}

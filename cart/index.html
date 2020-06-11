@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" href="../img/shopCart/cart.svg" sizes="32x32">
+    <title>购物车</title>
+
+    <link rel="stylesheet" href="../libs/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="../libs/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+    <link rel="stylesheet" href="./shopCart.css"/>
+    <script src="./shopCart.js" ></script>
+    <!-- <script src="../HomePage.js"></script> -->
+    <script src="../libs/Storage.js"></script> 
+    <!-- 所有商品 -->
+    <script src="../libs/AllItems.js"></script>
+
+</head>
+
+<body>
+    <!--part1 top导航条  navbar-fixed-top固定顶部 -->
+    <nav class="navbar navbar-default navbar-fixed-top nav-top" role="navigation">
+        <div class="container">
+            <!-- 导航条头部 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span>我的淘宝</span>
+                </a>
+            </div>
+            
+            <div class="navbar-collapse collapse">
+                <!-- 导航条左部 淘宝首页 用户名 消息 -->
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">淘宝首页</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Ooooh&nbsp;
+                            <span class="glyphicon glyphicon-grain" style="color: olive;"></span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu user">
+                            <div class="userinfo">
+                                <div class="userinfo-action">
+                                    <a href="#" class="userinfo-action-manage">账号管理&nbsp;&nbsp;</a>
+                                    <a href="../login/index.html" class="userinfo-action-exit">&nbsp;退出</a>
+                                </div>
+                                <img class="img-circle userinfo-img" src="../img/user/touxiang.jpg">
+                                <div class="userinfo-info">
+                                    <span>淘气值：754</span></br>
+                                    <span>普通会员</span>
+                                </div>
+                                <button class="userinfo-btn">查看你的专属权益</button>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-envelope" style="color: cornflowerblue; font-size: 12px;"></span>
+                            消息
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu news">
+                            <li>
+                                <a href="#" style="color: red;">
+                                    新消息 
+                                    <span class="badge" style="font-size: 10px; background-color: #999;">99+</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#">查看全部 <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span></a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">手机逛淘宝</a>
+                    </li>
+
+                </ul>
+                <!-- 导航条右部 购物车 收藏夹 退出-->
+                <ul class="nav navbar-nav navbar-right"> 
+                    <li class="active">
+                        <a href="./index.html">
+                            <span class="glyphicon glyphicon-shopping-cart" style="color: red; font-size: 12px;"></span>
+                             我的购物车
+                            <span class="cartItem-num">0</span>
+                            </a>
+                        </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-star-empty" style="color: orange; font-size: 12px;"></span>
+                            收藏夹
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu collect">
+                            <li><a href="#">收藏的宝贝</a></li>
+                            <li><a href="#">收藏的店铺</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../login/index.html"><span class="glyphicon glyphicon-log-in"></span> 退出登录</a></li> 
+                </ul> 
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="shopping"> 
+        <div class="begin">
+            <div class="begin-title">
+                <div class="begin-title-one"><img class="begin-title-img" src="https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png"></div>
+                <div class="begin-title-two"><h4>购物车</h4></div>
+                <div class="begin-title-search">
+                    <ul class="search-box">
+                        <li class="search-box-header"><span>宝贝</span></li>
+                        <li class="search-box-input"><input class="search-input" type="search" autofocus></li>
+                        <li class="search-box-btn"><button class="search-btn">搜 索</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 没有商品 -->
+        <div class="no-items">
+            <div class="no-items-logo"><img src="../img/shopCart/clearCart.svg"></div>
+            <div class="no-items-box">
+                <span class="no-items-text">购物车中还没有宝贝哦，快去挑选喜欢的商品吧~</span>
+                <a href="../index.html">寻找宝贝></a>
+            </div>
+            
+        </div>
+        
+        <div class="middle">
+            <div class="begin-goods-action">
+                <ul class="action-box">
+                    <li><span>全部商品</span> <span class="action-num allNum">0</span></li>
+                    <li><span>降价商品</span> <span class="action-num">0</span></li>
+                    <li><span>库存紧张</span> <span class="action-num">0</span></li>
+                </ul> 
+            </div>
+            <div class="begin-classify">
+                <span class="total-check"><input class="ckbtn-all total-ckbtn" type="checkbox" onclick="checkAll(this)">全选</span>
+                <span class="goods">商品信息</span>
+                <span class="unit-price">单价</span>
+                <span class="amount">数量</span>
+                <span class="minor-total">金额</span>
+                <span class="play">操作</span>
+            </div>
+            <!-- 店铺 -->
+            <div class="middle-store">
+                <div class="store">
+                    <li class="store-check"><input id="ckbtn-all" class="ckbtn-all" type="checkbox" onclick="checkAll(this)"></li>
+                    <li class="store-king"><img src="../img/shopCart/jinpai.svg" class="store-king-img"></li>
+                    <li class="store-name">店铺：<a href="#" class="store-name-one">小托的宝藏小铺</a></li>
+                    <li class="elf"><img src="../img/shopCart/taobao.svg" class="elf-img"></li>
+                </div>
+
+                <div class="begin-about">
+                    <div class="begin-about-by">满99包邮</div>
+                    <span class="begin-about-yh">已享优惠：包邮</span>
+                    <span class="begin-about-tj">满99</span>
+                </div>
+               
+                <div class="cart-items-box"></div>
+            </div>
+        </div>    
+        
+
+        <div class="footer">
+            <span class="footer-check"><input class="ckbtn-all" type="checkbox" onclick="checkAll(this)">全选</span>
+            <div class="footer-select">
+                <span class="footer-del" onclick="delAll()">删除</span>
+                <span class="footer-clear">清除失效宝贝</span>
+                <span class="footer-removeto">移入收藏夹</span>
+                <span class="footer-share">分享</span>
+            </div>
+            <div class="footer-right">
+                <span class="all-num">已选商品<span class="totalNum">0</span>件</span>
+                <span class="all">合计（不含运费）：<span class="lastm">￥</span><span class="totalPrice">0.00</span></span>
+                <button class="submit-btn">结算</button>
+            </div>
+        </div>
+        
+        <!-- 减少模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="ture">
+            <div class="modal-dialog tocart-modal-box">
+                <div class="modal-content tocart-modal">
+                    <div class="modal-header tocart-modal-header">
+                        <span>提示</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body tocart-modal-body">
+                        宝贝不可再减少，若不需要请删除！
+                    </div>
+                    <div class="modal-footer tocart-modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- 删除模态框（Modal） -->
+        <div class="modal fade" id="myModalDel" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="ture">
+            <div class="modal-dialog tocart-modal-box">
+                <div class="modal-content tocart-modal">
+                    <div class="modal-header tocart-modal-header">
+                        <span>提示</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body tocart-modal-body">
+                        您确定要删除该宝贝吗？
+                    </div>
+                    <div class="modal-footer tocart-modal-footer">
+                        <button type="button" class="btn btn-default del-btn" data-dismiss="modal">确定</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- 数值判断模态框（Modal） -->
+        <div class="modal fade" id="myModalNum" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="ture">
+            <div class="modal-dialog tocart-modal-box">
+                <div class="modal-content tocart-modal">
+                    <div class="modal-header tocart-modal-header">
+                        <span>提示</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body tocart-modal-body">
+                        输入数值无效，请输入正确的数值！
+                    </div>
+                    <div class="modal-footer tocart-modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- 选中删除模态框（Modal） -->
+        <div class="modal fade" id="myModalDelAll" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="ture">
+            <div class="modal-dialog tocart-modal-box">
+                <div class="modal-content tocart-modal">
+                    <div class="modal-header tocart-modal-header">
+                        <span>提示</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body tocart-modal-body">
+                        您确定要删除选中的所有宝贝吗？
+                    </div>
+                    <div class="modal-footer tocart-modal-footer">
+                        <button type="button" class="btn btn-default del-all-btn" data-dismiss="modal">确定</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- 结算 -->
+        <div class="modal fade" id="settlement-Modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog settlement-box">
+                <div class="modal-content settlement-modal">
+                    <!-- 地址信息 -->
+                    <div class="modal-header settlement-modal-header">
+                        <div class="addr-title"><span class="interval-star">*</span>地址信息</div>
+                        <!-- 收货地址 -->
+                        <div class="choose-addr">
+                            <span class="interval-star">*</span>收货地址:
+                            <li class="detail-delivery-li"> 
+                                <form role="form" id="delivery-form" class="detail-delivery-form">
+                                    <select id="province" class="form-control">
+                                        <option value="-1">请选择</option>
+                                    </select>
+                                    <select id="city" class="form-control "></select>
+                                    <select id="country" class="form-control"></select>
+                                </form>
+                            </li>
+                        </div>
+                        <!-- 详细地址 -->
+                        <div class="detailed-addr">
+                            <span class="detail-addr-title"><span class="interval-star">*</span>详细地址:</span>
+                            <textarea class="detailed-addr-text" placeholder="请输入详细地址信息，如道路、门牌号、小区、楼栋号、单元等信息"></textarea>
+                        </div>
+                        <!-- 收货人姓名 -->
+                        <div class="addrp-name">
+                            <span class="interval-star">*</span>收货人姓名:
+                            <input class="addrp-name-text" type="text" placeholder="长度不超过25个字符">
+                        </div>
+                        <!-- 手机号码 -->
+                        <div class="addrp-tel"> 
+                            <span class="interval-star">*</span>手机号码:
+                            <input class="addrp-tel-text" type="text" placeholder="请确保手机畅通">
+                        </div>
+                        
+                    </div>
+
+                    <!-- 订单信息 -->
+                    <div class="modal-body settlement-modal-body">
+                        <div class="body-title">确认订单信息</div>
+                        <div class="begin-classify body-items-title">
+                            <span class="goods">店铺宝贝</span>
+                            <span class="unit-price">单价</span>
+                            <span class="amount">数量</span>
+                            <span class="sale">优惠方式</span>
+                            <span class="tol-price">小计</span>
+                        </div>
+                        <!-- 店铺 -->
+                        <div class="body-store-box">
+                            <div class="store body-store">
+                                <li class="store-king"><img src="../img/shopCart/jinpai.svg" class="store-king-img"></li>
+                                <li class="store-name body-store-name">店铺：<a href="#" class="store-name-one">小托的宝藏小铺</a></li>
+                                <li class="store-name sell-name">卖家：<a href="#" class="store-name-one">小托  </a><img src="../img/shopCart/taobao.svg" class="elf-img"></li>
+                            </div>
+                            <!-- 商品 -->
+                            <div class="paygood-box"></div>
+                            <!-- 留言，店铺总价 -->
+                            <div class="body-store-footer">
+                                <li class="body-footer-message">
+                                    <span class="body-footer-sp">给卖家留言：</span>
+                                    <textarea class="body-footer-text" placeholder="选填，请先和商家协商一致"></textarea>
+                                </li>
+                                <li class="body-total-price-box">
+                                    <span class="body-total-price-text">店铺合计（含运费） 
+                                        <span class="body-total-price-logo">￥
+                                            <span class="body-total-price">58.90</span>
+                                        </span>
+                                    </span>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 结算信息 -->
+                    <div class="modal-footer settlement-modal-footer">
+                        <div class="modal-footer-bor"></div>
+                        <div class="settlement-footer-box">
+                            <div class="settlement-footer-content">
+                                <div class="footer-content-text pay-text">实付款：
+                                    <span class="footer-content-logo">￥
+                                        <span class="footer-content-price">0.00</span>
+                                    </span>
+                                </div>
+                                <div class="footer-content-text">寄送至：
+                                    <span class="footer-content-message footer-detail-addr">收货地址不可为空</span>
+                                </div>
+                                <div class="footer-content-text">收货人：
+                                    <span class="footer-content-message footer-detail-user">收货人不可为空</span>
+                                </div>
+                            </div>
+                            <button type="button" class="settlement-footer-btn cancel-buy-btn" data-dismiss="modal">取消订单</button>
+                            <button type="button" class="settlement-footer-btn buy-btn" data-dismiss="modal">提交订单</button>
+                        </div>
+                        <div class="modal-footer-sp"><img class="tip-img" src="../img/shopCart/tip.svg"> 若价格变动，请在提交订单后联系卖家改价，并查看已买到的宝贝</div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        
+        <!-- 支付成功 -->
+        <div class="modal fade" id="pay-success-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog tocart-modal-box">
+                <div class="modal-content tocart-modal">
+                    <div class="modal-header pay-header">
+                        <span>支付成功</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body tocart-modal-body">
+                        <img class="pay-success-img" src="../img/shopCart/pay.svg">                       
+                    </div>
+                    <div class="modal-footer tocart-modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+
+</body>
+</html>

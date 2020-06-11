@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/icon/xihuan.svg" sizes="32x32">
+    <title>淘宝心选</title>
+
+    <link rel="stylesheet" href="../libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <script src="../libs/jquery/jquery-3.4.1.min.js"></script>
+    <script src="../libs/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <!-- <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script> -->
+    <!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
+    <link rel="stylesheet" href="./HeartChoose.css">
+    <script src="./HeartChoose.js"></script>
+    <script src="../libs/Storage.js"></script>
+    <!-- 所有商品 -->
+    <script src="../libs/AllItems.js"></script>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container all-box">
+        <img src="https://gdp.alicdn.com/imgextra/i3/3294889394/O1CN01pxaXqt2JGVA4yFarE_!!3294889394.jpg">
+        <!-- 搜索框 -->
+        <div class="header-search">
+            <li class="header-search-li"><input type="search" class="form-control search-box" autofocus placeholder="搜索好物"></li>
+            <li class="header-search-li"><button class="btn btn-outline-danger seacrh-btn">搜索</button></button>
+        </div>
+        <!-- 导航栏 -->
+        <nav class="breadcrumb">
+            <li class="nav-li"><a class="breadcrumb-item active-item" href="#">全部商品</a>
+                <ul class="active-item-dropdown">
+                    <li class="nav-item-tran"></li>
+                    <li class="nav-items-li"><a href="#">床品</a></li>
+                    <li class="nav-items-li"><a href="#">箱包</a></li>
+                    <li class="nav-items-li"><a href="#">餐厨</a></li>
+                    <li class="nav-items-li"><a href="#">洗护</a></li>
+                    <li class="nav-items-li"><a href="#">居家</a></li>
+                    <li class="nav-items-li"><a href="#">服饰</a></li>
+                </ul>
+            </li>
+            <a class="breadcrumb-item" href="../index.html">首页<img class="nav-logo" src="../img/HeartChoose_icon/fangwu.svg"></a>
+            <a class="breadcrumb-item" href="#">床品<img class="nav-logo" src="../img/HeartChoose_icon/chuang.svg"></a>
+            <a class="breadcrumb-item" href="#">箱包<img class="nav-logo" src="../img/HeartChoose_icon/bao.svg"></a>
+            <a class="breadcrumb-item" href="#">餐厨<img class="nav-logo" src="../img/HeartChoose_icon/canju.svg"></a>
+            <a class="breadcrumb-item" href="#">洗护<img class="nav-logo" src="../img/HeartChoose_icon/xihu.svg"></a>
+            <a class="breadcrumb-item" href="#">居家<img class="nav-logo" src="../img/HeartChoose_icon/jujia.svg"></a>
+            <a class="breadcrumb-item" href="#">服饰<img class="nav-logo" src="../img/HeartChoose_icon/fushi.svg"></a>
+        </nav>
+    </div>
+
+    <!-- 轮播图 -->
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- 指示符 -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+       
+        <!-- 轮播图片 -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="carousel-img" src="https://img.alicdn.com/imgextra/i2/3294889394/TB2XfuKkyCYBuNkHFCcXXcHtVXa_!!3294889394-0-shop_design.jpg">
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-img" src="https://img.alicdn.com/imgextra/i2/3294889394/TB2Yixvs4SYBuNjSspjXXX73VXa_!!3294889394-0-shop_design.jpg">
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-img" src="https://img.alicdn.com/imgextra/i3/3294889394/TB2DSc6sKSSBuNjy0FlXXbBpVXa_!!3294889394-0-shop_design.jpg">
+            </div>
+        </div>
+       
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+       
+    </div>
+      
+    <!-- 商品栏 -->
+    <div class="container all-box">
+        <a href="#"><img class="title-img" src="https://gdp.alicdn.com/tfs/TB10af6SXXXXXX2XFXXXXXXXXXX-990-100.jpg"></a>
+        <!-- 商品 -->
+        <div class="row goods-box"></div>
+        <!-- 版块 -->
+        <div class="goods-section">
+            <div class="section-title">``心选好物</div>
+            <a href="#"><img class="section-img" src="https://gdp.alicdn.com/imgextra/i1/3294889394/TB2wZBerFkoBKNjSZFEXXbrEVXa_!!3294889394.jpg" alt="居家用品"></a>
+            <a href="#"><img class="section-img" src="https://gdp.alicdn.com/imgextra/i2/3294889394/TB2HPOcrqAoBKNjSZSyXXaHAVXa_!!3294889394.jpg" alt="洗护用品"></a>
+            <a href="#"><img class="section-img" src="https://gdp.alicdn.com/imgextra/i3/3294889394/TB2nM4yrQ7mBKNjSZFyXXbydFXa_!!3294889394.jpg" alt="出行用品"></a>
+            <a href="#"><img class="section-img" src="https://gdp.alicdn.com/imgextra/i4/3294889394/TB2zzxIrHArBKNjSZFLXXc_dVXa_!!3294889394.jpg" alt="厨房用品"></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-title"></div>
+    </div>
+    
+    <!-- top栏 -->
+    <div class="totop">
+        <!-- 客服 -->
+        <div class="totop-box kefu">
+            <img class="totop-logo" src="../img/title/taobao_1.svg">
+            <span class="totop-text">客服</span>   
+            <!-- 客服栏 -->
+            <div class="totop-kefu">
+                <span class="kefu-hc">淘宝心选</span>
+                <button class="kefu-btn">&nbsp;&nbsp;和我联系</button>
+                <img class="wangwang-icon" src="../img/title/taobao_wangwang_blue.svg">
+            </div>        
+        </div>
+        
+        <!-- 小火箭 -->
+        <a href="#" class="totop-box top"><img class="totop-logo-top" src="../img/icon/totop.svg"></a>
+    </div>
+
+    <!-- 购物车logo -->
+    <div class="totop-cart">
+        <img class="to-cart-move-img" src="../img/icon/cartItem.svg" alt="">
+        <img class="totop-cart-img" src="../img/icon/tocart.svg" alt="">
+    </div>
+
+</body>
+</html>

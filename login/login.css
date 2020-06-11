@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('../img/login/login.jpg') 0 / cover fixed;
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -185px;
+  margin-top: -210px;
+  height: 420px;
+  width: 340px;
+  font-size: 18px;
+  -webkit-box-shadow: 0px 0px 10px #a6a6a6;
+  background: rgba(255, 255, 255, 0.925);
+  border-radius: 10px;
+}
+
+.border-btn {
+  border-bottom: 1px solid #ccc;
+}
+
+#landing,
+#registered {
+  float: left;
+  text-align: center;
+  width: 170px;
+  padding: 15px 0;
+  color: #545454;
+  cursor: pointer;
+}
+
+#landing-content {
+  clear: both;
+}
+
+.inp {
+  height: 30px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 200px;
+}
+
+.inp > input {
+  text-align: center;
+  height: 30px;
+  width: 200px;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgb(141, 141, 141);
+  border-radius: 5px;
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid orange;
+}
+
+.login {
+  border: 1px solid orange;
+  border-radius: 5px;
+  background-color: orange;
+  color: #fff;
+  height: 30px;
+  width: 202px;
+  text-align: center;
+  font-size: 13.333333px;
+  margin-left: 70px;
+  line-height: 30px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  cursor: pointer;
+}
+
+#bottom {
+  margin-top: 30px;
+  font-size: 13.333333px;
+  color: #a6a6a6;
+}
+
+#registeredtxt {
+  float: left;
+  margin-left: 80px;
+  cursor: pointer;
+}
+
+#forgotpassword {
+  float: right;
+  margin-right: 80px;
+  cursor: pointer;
+}
+
+#photo {
+  border-radius: 80px;
+  border: 1px solid #ccc;
+  height: 80px;
+  width: 80px;
+  margin: 0 auto;
+  overflow: hidden;
+  clear: both;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#photo > img:hover {
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  -o-transform: rotateZ(360deg);
+  -ms-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+}
+
+#photo > img {
+  height: 80px;
+  width: 80px;
+  -webkit-background-size: 220px 220px;
+  border-radius: 60px;
+  -webkit-transition: -webkit-transform 1s linear;
+  -moz-transition: -moz-transform 1s linear;
+  -o-transition: -o-transform 1s linear;
+  -ms-transition: -ms-transform 1s linear;
+}
+
+#registered-content {
+  margin-top: 40px;
+  display: none;
+}
+
+.fix {
+  clear: both;
+}
+.form {
+  display: none;
+}

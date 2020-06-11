@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/title/taobao_1.svg" sizes="32x32">
+    <title>淘宝首页</title>
+    <link rel="stylesheet" href="./libs/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="./libs/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    
+
+    <link rel="stylesheet" href="./HomePage.css">
+    <script src="./HomePage.js"></script>
+    <script src="./libs/Storage.js"></script>
+    <!-- 所有商品 -->
+    <script src="./libs/AllItems.js"></script>
+
+</head>
+
+<body>
+    <!--part1 top导航条  navbar-fixed-top固定顶部 -->
+    <nav class="navbar navbar-default nav-top" role="navigation">
+        <div class="container">
+            <!-- 导航条头部 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span>我的淘宝</span>
+                </a>
+            </div>
+            
+            <div class="navbar-collapse collapse">
+                <!-- 导航条左部 淘宝首页 用户名 消息 -->
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">淘宝首页</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Ooooh&nbsp;
+                            <span class="glyphicon glyphicon-grain" style="color: olive;"></span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu user">
+                            <div class="userinfo">
+                                <div class="userinfo-action">
+                                    <a href="#" class="userinfo-action-manage">账号管理&nbsp;&nbsp;</a>
+                                    <a href="./login/index.html" class="userinfo-action-exit">&nbsp;退出</a>
+                                </div>
+                                <img class="img-circle userinfo-img" src="./img/user/touxiang.jpg">
+                                <div class="userinfo-info">
+                                    <span>淘气值：754</span></br>
+                                    <span>普通会员</span>
+                                </div>
+                                <button class="userinfo-btn">查看你的专属权益</button>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-envelope" style="color: cornflowerblue; font-size: 12px;"></span>
+                            消息
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu news">
+                            <li>
+                                <a href="#" style="color: red;">
+                                    新消息 
+                                    <span class="badge" style="font-size: 10px; background-color: #999;">99+</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#">查看全部 <span class="glyphicon glyphicon-chevron-right" style="font-size: 12px;"></span></a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">手机逛淘宝</a>
+                    </li>
+
+                </ul>
+                <!-- 导航条右部 购物车 收藏夹 退出-->
+                <ul class="nav navbar-nav navbar-right"> 
+                    <li><a href="./cart/index.html">
+                        <span class="glyphicon glyphicon-shopping-cart" style="color: red; font-size: 12px;"></span>
+                         我的购物车
+                         <span class="cartItem-num">0</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-star-empty" style="color: orange; font-size: 12px;"></span>
+                            收藏夹
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu collect">
+                            <li><a href="#">收藏的宝贝</a></li>
+                            <li><a href="#">收藏的店铺</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./login/index.html"><span class="glyphicon glyphicon-log-in"></span> 退出登录</a></li> 
+                </ul> 
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+    <!--part2 淘宝网logo search表单 手机淘宝二维码 -->
+    <div class="row headerbox" role="navigation">
+        <div class="container">
+            <!-- 淘宝网logo -->
+            <div class="headerbox-logo">
+                <img class="headerbox-img" src="https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" >
+            </div>
+            <!-- search表单 -->
+            <div class="headerbox-searchbox">
+                <!-- 小导航条 -->
+                <div class="headerbox-searchbox-nav">
+                    <ul class="searchbox-nav-ul">
+                        <li class="searchbox-nav-li searchbox-nav-selected">宝贝</li>
+                        <li class="searchbox-nav-li tianmao">天猫</li>
+                        <li class="searchbox-nav-li">店铺</li>
+                    </ul>
+                </div>
+                <!-- 搜索框和按钮 -->
+                <div class="headerbox-searchbox-part">
+                    <div class="headerbox-searchbox-part-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <input class="headerbox-searchbox-part-input" type="search" autofocus="autofocus" placeholder=" 小托的宝藏小铺">
+                        <span class="glyphicon glyphicon-camera searchbox-camera" style="font-size: 18px; color: #999;"></span>
+                    </div>
+                    <button class="headerbox-searchbox-part-btn">搜索</button>
+                </div>
+                <!-- 下方链接 -->
+                <div class="headerbox-searchbox-link">
+                    <a href="#" class="searchbox-link a">新款连衣裙</a>
+                    <a href="#" class="searchbox-link a">四件套</a>
+                    <a href="#" class="searchbox-link b">潮流T恤</a>
+                    <a href="#" class="searchbox-link a">时尚女鞋</a>
+                    <a href="#" class="searchbox-link a">短裤</a>
+                    <a href="#" class="searchbox-link a">半身裙</a>
+                    <a href="#" class="searchbox-link a">天然松果干花</a>
+                    <a href="#" class="searchbox-link a">简约花瓶</a>
+                    <a href="#" class="searchbox-link a">兔尾巴草</a>
+                    <a href="#" class="searchbox-link a">多肉盆栽</a>
+                </div>
+            </div>
+            <!-- 手机淘宝二维码 -->
+            <div class="headerbox-qr-code">
+                <div class="qr-close"><h6 class="qr-close-text">x</h6></div>
+                <div class="qr">
+                    <span class="qr-text">手机淘宝</span>
+                    <img class="qrcode" src="./img/title/qrcode.png">
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- 滚动后 淘宝网logo search表单 -->
+    <div class="movebox">
+        <img class="headerbox-img move" src="https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" >
+    </div>
+
+
+    <!--part3 定义布局容器 促销栏 商品栏 -->
+    <div class="container" > 
+        <!-- 促销栏 -->
+        <div class="row page-header">
+            <!-- 折叠菜单 -->
+            <div class="panel-group fold-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading  panel-goods-head">
+                        <h4 class="panel-title panel-goods-title">
+                            <div data-toggle="collapse" data-parent="#accordion" 
+                               href="#collapseOne">
+                                精选衣物 <span class="glyphicon glyphicon-magnet  logo-panel-goods"></span>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in panel-goods-text">
+                        <div class="panel-body">
+                            连衣裙 &nbsp;半身裙 &nbsp;毛针织衫 &nbsp;T恤 &nbsp;短外套 &nbsp;卫衣 &nbsp;汉服 &nbsp;JK制服 &nbsp;LOLITA 衬衫 &nbsp;百搭裤装 &nbsp;牛仔裤 &nbsp;西装 &nbsp;时尚套装 &nbsp;蕾丝衫/雪纺衫 &nbsp;风衣 &nbsp;背心吊带 &nbsp;马夹 &nbsp;牛仔外套
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading  panel-goods-head">
+                        <h4 class="panel-title panel-goods-title">
+                            <div data-toggle="collapse" data-parent="#accordion" 
+                               href="#collapseTwo">
+                                鲜选食物 <span class="glyphicon glyphicon-cutlery logo-panel-goods"></span>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse panel-goods-text">
+                        <div class="panel-body">
+                            冰皮月饼 &nbsp;零食大礼包 &nbsp;牛肉干 &nbsp;面包 &nbsp;辣条 &nbsp;红枣 &nbsp;核桃 &nbsp;饼干 &nbsp;巧克力 &nbsp;葡萄干 &nbsp;芒果干 &nbsp;绿豆糕 &nbsp;薯片 &nbsp;锅巴 &nbsp;海苔 &nbsp;月饼 &nbsp;蛋黄酥 &nbsp;猪肉脯 &nbsp;长沙臭豆腐 &nbsp;瓜子 &nbsp;糖果
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-goods-head">
+                        <h4 class="panel-title panel-goods-title">
+                            <div data-toggle="collapse" data-parent="#accordion" 
+                               href="#collapseThree">
+                                家电数码 <span class="glyphicon glyphicon-phone  logo-panel-goods"></span>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse panel-goods-text">
+                        <div class="panel-body">
+                            游戏主机 &nbsp;数码精选 &nbsp;手机壳套 &nbsp;surface平板电脑 &nbsp;苹果/Apple &nbsp;iPad Pro &nbsp;电脑主机 &nbsp;数码相机 &nbsp;电玩动漫 &nbsp;单反相机 &nbsp;华为 &nbsp;MateBook &nbsp;IPAD mini4 &nbsp;游戏主机 &nbsp;鼠标键盘 &nbsp;无人机
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-goods-head">
+                        <h4 class="panel-title panel-goods-title">
+                            <div data-toggle="collapse" data-parent="#accordion" 
+                               href="#collapseFour">
+                                家庭百货 <span class="glyphicon glyphicon-home  logo-panel-goods"></span>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse panel-goods-text">
+                        <div class="panel-body">
+                            保温杯 &nbsp;饭盒 &nbsp;玻璃杯 &nbsp;马克杯 &nbsp;餐具套装 &nbsp;碗 &nbsp;盘 &nbsp;碟 &nbsp;茶具套装 &nbsp;茶杯 &nbsp;茶壶 &nbsp;茶具 &nbsp;陶瓷餐具 &nbsp;拖鞋 &nbsp;雨伞雨具 &nbsp;口罩 &nbsp;垃圾桶 &nbsp;居家鞋 &nbsp;省力拖把 &nbsp;家务清洁 &nbsp;垃圾袋 &nbsp;梳子 &nbsp;抹布 &nbsp;围裙
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 轮播图 -->
+            <div id="myCarousel" class="carousel slide goodscarousel" data-ride="carousel">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>   
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active goods">
+                        <img class="img-carousel items-img" src="./img/pros/pros1-7.jpg" alt="First slide">
+                        <div class="carousel-caption items-title text-carousel">简约透明玻璃小花瓶</div>
+                    </div>
+                    <div class="item goods">
+                        <img class="img-carousel items-img" src="./img/pros/pros1-8.jpg" alt="Second slide">
+                        <div class="carousel-caption items-title text-carousel">田园仿真多肉植物盆栽</div>
+                    </div>
+                    <div class="item goods">
+                        <img class="img-carousel items-img" src="./img/pros/pros1-9.jpg" alt="Third slide">
+                        <div class="carousel-caption items-title text-carousel">木莲花天然干花 永生花</div>
+                    </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div> 
+
+            <!-- 淘宝小版块 -->
+            <div class="page-header-imgs">
+                <div class="taobao-section-header">
+                    <div class="taobao-section taobaoSection">
+                        <img src="./img/taobaoSection/section1.png">
+                    </div>
+                </div>
+
+                <div class="taobao-section-header heart-choose">
+                    <div class="taobao-section">
+                    <img src="./img/taobaoSection/section2.png">
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- 个人信息版块 -->
+            <div class="page-header-user">
+                <div class="header-user-box">
+                    <div class="header-user-message">
+                        <img class="img-circle userinfo-img header-user-img" src="./img/HeadPortraits/t1.jpg">
+                        <div>Hi! Ooooh</div>
+                    </div>
+                    <div class="header-user-goodsmessage">
+                        <li class="goodsmessage-text"><span class="goodsmessage-amount">2</span></br><span>待收货</span></li>
+                        <li class="goodsmessage-text"><span class="goodsmessage-amount">3</span></br><span>待发货</span></li>
+                        <li class="goodsmessage-text"><span class="goodsmessage-amount">0</span></br><span>待付款</span></li>
+                        <li class="goodsmessage-text"><span class="goodsmessage-amount">1</span></br><span>待评价</span></li>
+                    </div>
+                </div>
+                <div class="header-user-report">&nbsp;&nbsp;&nbsp;&nbsp;网上有害信息举报专区 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-play logo-play"></span></div>
+                <div class="container-fluid header-user-part">
+                    <li class="col-md-3 header-user-parts">
+                        <img class="header-user-icon" src="./img/icon/xihuan.svg">
+                        <span>喜欢</span>
+                    </li>
+                    <li class="col-md-3 header-user-parts">
+                        <img class="header-user-icon" src="./img/icon/dianhua.svg">
+                        <span>话费</span>
+                    </li>
+                    <li class="col-md-3 header-user-parts">
+                        <img class="header-user-icon" src="./img/icon/dingwei.svg">
+                        <span>旅游</span>
+                    </li>
+                    <li class="col-md-3 header-user-parts">
+                        <img class="header-user-icon" src="./img/icon/pingjia.svg">
+                        <span>评价</span>
+                    </li>
+                    <li class="col-md-3 header-user-parts">
+                        <img class="header-user-icon" src="./img/icon/bofang.svg">
+                        <span>电影</span>
+                    </li>
+                    <li class="col-md-3 header-user-parts">
+                        <a href="./game/index.html">
+                            <img class="header-user-icon" src="./img/icon/shizhong.svg">
+                            <span>游戏</span>
+                        </a>
+                    </li>
+                    <li class="col-md-3 header-user-parts">
+                        <img class="header-user-icon" src="./img/icon/rizhi.svg">
+                        <span>彩票</span>
+                    </li>
+                    <li class="col-md-3 header-user-parts">
+                        <a href="https://aidn.jp/wowa/">
+                            <img class="header-user-icon" src="./img/icon/sousuo.svg">
+                            <span>发现</span>                           
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+
+  
+        <!-- 商品栏 -->
+        <div class="row goods-box"> 
+            <!-- 有好货 -->
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="goods-box-title">                        
+                    <img class="mlogo" src="https://img.alicdn.com/tfs/TB1tqpnegMPMeJjy1XcXXXpppXa-148-48.png" title="有好货">
+                    <span class="glyphicon glyphicon-qrcode yhh-qrcode" style="color: cornflowerblue;"></span>
+                    <span class="mlogo-text">与品质生活不期而遇</span>
+                </div> 
+                                                               
+            </div>
+            <!-- 爱逛街 -->
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="goods-box-title">                        
+                    <img class="mlogo" src="https://img.alicdn.com/tfs/TB1UNX2bSFRMKJjy0FhXXX.xpXa-112-46.png" title="爱逛街">
+                    <span class="mlogo-text">献给聪明可爱的你</span>
+                </div> 
+                                                                
+            </div>
+        </div>
+    </div>
+
+
+    <!--part4 商品滚动栏 -->
+    <div class="container scroll-box">
+        <div class="scroll-box-title">
+            <span class="glyphicon glyphicon-play scroll-box-title-logo"></span>
+            <span class="scroll-box-title-new"> 造·新品 </span>
+            <span>创意好物看上就买</span>
+        </div>
+        <!-- 左按钮 -->
+        <div class="scroll-left scroll-btn">
+            <span class="scroll-logo glyphicon glyphicon-chevron-left"></span>
+        </div>
+        <!-- 右按钮 -->
+        <div class="scroll-right scroll-btn">
+            <span class="scroll-logo glyphicon glyphicon-chevron-right"></span>
+        </div>
+        <!-- 商品显示栏 -->
+        <div class="scroll-items-show" style="width: 870px;">
+            <!-- 所有商品 -->
+            <div class="scroll-items-box" style="left: 0;">
+            </div>  
+        </div>
+    </div>
+
+
+    <!--part5 猜你喜欢 -->
+    <div class="container like-items-all-box">
+        <div class="like-item-header">
+            <div class="like-item-header-logo"></div>
+            <span class="like-item-header-sp">猜你喜欢</span>
+        </div>
+        <div class="like-items-Box">
+
+        </div>
+    </div>
+ 
+    
+    <!--part6 footer -->
+    <div class="page-footer">
+        <img src="./img/title/footer.png">
+    </div>
+
+
+    <!--part7 top栏 -->
+    <div class="totop-box">
+        <div class="totop-box-logobox">
+            <div class="totop-box-logo">
+                <img class="totop-box-logo-img" src="./img/title/taobao.png">
+            </div>
+        </div>
+        
+        <div class="totop">
+            <li class="top_text top_text_one top_selected">精选栏目</li>
+            <!-- <a href="#" class="top_text top_text_two">占个坑位</a> -->
+            <li class="top_text top_text_three">爱逛好货</li>
+            <li class="top_text top_text_four">创意好物</li>
+            <li class="top_text top_text_five">猜你喜欢</li>
+            <li class="top_text top_text_six"><div>^</div>顶部</li>
+            <li class="top_text top_text_seven">反馈</li>
+            <li><a href="#" class="top_text top_text_eight">暴恐举报</a></li>
+        </div>
+    </div>
+    
+
+    <!--part7-1 反馈页面 -->
+    <div class="feedback_box">
+        <div class="taobaoFrame">
+            <div class="taobaoFrame-box">
+                <div class="header">
+                    <h5 class="header_text">说说我在淘宝首页的问题</h5>
+                    <span class="glyphicon glyphicon-remove"></span>
+                </div>                        
+                <div class="feedback_nav">
+                    <div class="identity">
+                        <div class="buyer">我是买家</div>
+                        <div class="seller">我是卖家</div>
+                        <div class="myfeedback">我的反馈</div>
+                    </div>	                
+                    <div class="InputOne">
+                        <div class="question">
+                            <span class="asterisk">*</span>问题描述
+                        </div>                   
+                        <div class="questionInput">
+                            <textarea class="inputContact" placeholder="至少5个字。不要输入您的隐私信息，如：支付宝密码。"></textarea>
+                        </div>
+                    </div>               
+                    <div class="InputTwo">
+                        <div class="contact">
+                            <span>联系方式</span>
+                        </div>              
+                        <div class="contactInput">
+                            <input class="inputContact" placeholder="请输入您的联系旺旺" />
+                        </div>
+                    </div>	         
+                    <div class="add">
+                        <button class="addButton"><span class="glyphicon glyphicon-plus" style="color: rgb(255, 94, 1); font-size: 12px;"></span>添加截图</button>
+                    </div>             
+                </div>          
+                <div class="footer">
+                    <button class="submitButton">提交</button>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+
+    <!-- part7-2  购物车logo -->
+    <div class="totop-cart">
+        <!-- part7-2-1 加入购物车 -->
+        <img class="to-cart-move-img" src="./img/icon/cartItem.svg" alt="">
+
+        <img class="totop-cart-img" src="./img/icon/tocart.svg" alt="">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录</title>
+
+    <script src="../libs/jquery/jquery-3.4.1.min.js"></script>
+
+    <link rel="stylesheet" href="./login.css" />
+    <script src="./login.js"></script>
+  </head>
+
+  <body>
+    <div class="form">
+      <div id="landing">登陆</div>
+      <div id="registered">注册</div>
+      <div class="fix"></div>
+      <div id="landing-content">
+        <div id="photo"><img src="../img/user/touxiang.jpg" /></div>
+        <div class="inp">
+          <input id="user-name" type="text" placeholder="用户名" />
+        </div>
+        <div class="inp">
+          <input id="user-pwd" type="password" placeholder="密码" />
+        </div>
+        <button id="login-btn" class="login">登录</button>
+        <div id="bottom">
+          <span id="registeredtxt">立即注册</span>
+          <span id="forgotpassword">忘记密码</span>
+        </div>
+      </div>
+      <div id="registered-content">
+        <div class="inp"><input type="text" placeholder="请输入用户名" /></div>
+        <div class="inp">
+          <input type="password" placeholder="请输入密码" />
+        </div>
+        <div class="inp">
+          <input type="password" placeholder="请再次输入密码" />
+        </div>
+        <div class="inp"><input type="text" placeholder="电子邮箱" /></div>
+        <button class="login">立即注册</button>
+      </div>
+    </div>
+  </body>
+</html>
