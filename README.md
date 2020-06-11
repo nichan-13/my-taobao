@@ -1,7 +1,7 @@
 # my-taobao
 
 ## 项目简介
-这是一个主要使用**JavaScript+Html+css**,使用了**Bootstrap**及**jQuery**框架，通过参考淘宝部分网页完成的小型在线购物商城，商品数据使用**Storage**进行存储和操作。
+这是一个主要使用 `**JavaScript**` + `**Html**` + `**css**` ,使用了 `**Bootstrap**` 及 `**jQuery**` 框架，通过参考淘宝部分网页完成的小型在线购物商城，商品数据使用 `**Storage**` 进行存储和操作。
 
 
 ## 项目功能说明
@@ -21,7 +21,7 @@
 5. 结算功能
 	- 用户确认需购买商品后可结算所有需购买商品，通过填写地址信息付款后即可购买商品。  
 	
-
+	
 ## 项目目录介绍
 1. my-taobao/cart  
 	购物车页面及逻辑代码，包含结算（模态框）
@@ -56,9 +56,9 @@
 	- HomePage.js
 		- 淘宝首页js文件
 	- HomePage.css
-		- 淘宝首页css文件		
-
-
+		- 淘宝首页css文件  
+		
+		
 ## 项目页面展示
 1. 登录页面
 	![login.png](https://z4a.net/images/2020/06/11/login.png)
