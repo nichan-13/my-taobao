@@ -1,7 +1,7 @@
 # my-taobao
 
 ## 项目简介
-这是一个主要使用 `**JavaScript**` + `**Html**` + `**css**` ,使用了 `**Bootstrap**` 及 `**jQuery**` 框架，通过参考淘宝部分网页完成的小型在线购物商城，商品数据使用 `**Storage**` 进行存储和操作。
+这是一个主要使用 `JavaScript` + `Html` + `css` ,使用了 `Bootstrap` 及 `jQuery` 框架，通过参考淘宝部分网页完成的小型在线购物商城，商品数据使用 `Storage` 进行存储和操作。
 
 
 ## 项目功能说明
@@ -30,7 +30,7 @@
 	商品详情页面及逻辑代码
 
 3. my-taobao/game  
-	小游戏***魔力圈圈***页面及逻辑代码
+	小游戏**魔力圈圈**页面及逻辑代码
 	
 4. my-taobao/HeartChoosePage  
 	淘宝心选页面及逻辑代码
