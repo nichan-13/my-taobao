@@ -1,7 +1,7 @@
 # my-taobao
 
 ## 项目简介
-  这是一个主要使用 `JavaScript` + `Html` + `css` ,使用了 `Bootstrap` 及 `jQuery` 框架，通过参考淘宝部分网页完成的小型在线购物商城，商品数据使用 `Storage` 进行存储和操作。
+  这是一个主要使用 `JavaScript` + `Html` + `css` ,使用了 `Bootstrap` 及 `jQuery` ，通过参考淘宝部分网页完成的小型在线购物商城，商品数据使用 `Storage` 进行存储和操作。
 
 
 ## 项目功能说明
@@ -40,7 +40,7 @@
 	存放项目的图片、图标
 
 6. my-taobao/libs
-	- 存放项目的框架文件（Bootstrap、jQuery）
+	- 存放Bootstrap、jQuery文件
 	- AllItems.js
 		- 所有商品数据文件
 	- comment.js
