@@ -1,4 +1,6 @@
 # my-taobao
+仿淘宝小型在线购物商城
+
 
 ## 项目简介
   这是一个主要使用 `JavaScript` + `Html` + `css` ,使用了 `Bootstrap` 及 `jQuery` ，通过参考淘宝部分网页完成的小型在线购物商城，商品数据使用 `Storage` 进行存储和操作。
